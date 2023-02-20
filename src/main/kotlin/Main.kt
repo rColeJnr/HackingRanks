@@ -1,3 +1,4 @@
 fun main(args: Array<String>) {
-    println("Hacking ranks!")
+
+    separateTheNumbers("1234")
 }
