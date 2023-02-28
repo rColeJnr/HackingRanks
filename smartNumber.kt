@@ -1,6 +1,8 @@
+// the code is actually in java 7
 public class Solution {
     public static boolean isSmartNumber(int num) {
-        int val = (int) Math.sqrt(num);    
+        int val = (int) Math.sqrt(num);   
+        // change the condition to check if it's a smart number 
         if(val * val == num)
             return true;
         return false;
