@@ -6,4 +6,20 @@
 
 fun countSort(arr: array<String>) {
     // Write your code here
+    val size = arr.size
+    val myMap = mutableMapOf<Int, String>()
+    
+    for (a in 0 until size){
+        val key = arr[a][0].first().toString().toInt()
+        if (a < size/2) {arr[a] = arrayOf("$key -")}
+        var value = myMap.get(key) 
+        if (value == null) {
+            value = arr[a][0].subSequence(1, arr[a][0].length).toString()
+        } else {
+            value = "$value${arr[a][0].subSequence(1, arr[a][0].length)}"
+        }
+        myMap.put(key, value)
+    }
+    
+    myMap.values.forEach{print("$it ")}
 }
