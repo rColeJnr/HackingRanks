@@ -9,16 +9,19 @@ fun countSort(arr: array<String>) {
     val size = arr.size
     val myMap = mutableMapOf<Int, String>()
     
+    for (a in 0 until size/2){
+        arr[a][1] = " -"
+    }
+    
     for (a in 0 until size){
-        val key = arr[a][0].first().toString().toInt()
-        if (a < size/2) {arr[a] = arrayOf("$key -")}
+        val key = arr[a][0].toString().toInt()
         var value = myMap.get(key) 
         if (value == null) {
-            value = arr[a][0].subSequence(1, arr[a][0].length).toString()
+            myMap.put( key,  arr[a][1] )
         } else {
-            value = "$value${arr[a][0].subSequence(1, arr[a][0].length)}"
+            val work = value + arr[a][1]
+            myMap.put(key, work)
         }
-        myMap.put(key, value)
     }
     
     myMap.values.forEach{print("$it ")}
